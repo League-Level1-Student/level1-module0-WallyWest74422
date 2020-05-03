@@ -25,38 +25,46 @@ public class PhotoQuiz {
 
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
-		// “Copy Image Address”)
-
+		// â€œCopy Image Addressâ€�)
+String Geoffrey = "https://www.pngitem.com/pimgs/m/25-256163_geoffrey-toys-r-us-giraffe-transparent-hd-png.png";
 		// 2. create a variable of type "Component" that will hold your image
-
+Component hi = createImage(Geoffrey);
 		// 3. use the "createImage()" method below to initialize your Component
 
 		// 4. add the image to the quiz window
-
+quizWindow.add(hi);
 		// 5. call the pack() method on the quiz window
-
+quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+String Question1 = JOptionPane.showInputDialog("Who is dis?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+if(Question1.contentEquals("Geoffrey the Giraffe")) {
+	JOptionPane.showMessageDialog(null, "CORRECT");
+}else {
+	JOptionPane.showMessageDialog(null, "INCORRECT");
+}
 		// 8. print "INCORRECT" if the answer is wrong
 
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+quizWindow.remove(hi);
 		// 10. find another image and create it (might take more than one line
 		// of code)
-
+String BabyYoda = "https://media.giphy.com/media/kI2hsMDS4zjK7Fbif8/giphy.gif";
 		// 11. add the second image to the quiz window
-
+Component bye = createImage(BabyYoda);
+quizWindow.add(bye);
 		// 12. pack the quiz window
-
+quizWindow.pack();
 		// 13. ask another question
-
+String Question2  = JOptionPane.showInputDialog("Who is this?");
 		// 14+ check answer, say if correct or incorrect, etc.
-
-	}
-
+if(Question2.contentEquals("The Child")) {
+	JOptionPane.showMessageDialog(null, "CORRECT");
+}else {
+	JOptionPane.showMessageDialog(null, "INCORRECT");
+}
+}
 	private Component createImage(String imageUrl) throws MalformedURLException {
 		URL url = new URL(imageUrl);
 		Icon icon = new ImageIcon(url);
